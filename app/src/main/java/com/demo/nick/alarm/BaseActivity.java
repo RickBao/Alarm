@@ -46,7 +46,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                 getString(R.string.key_theme), null);
 
         if (themeDark.equals(theme)) {
-            setTheme(R.style.APPTheme_Dark);
+            setTheme(R.style.AppTheme_Dark);
         } else if (themeBlack.equals(theme)) {
             setTheme(R.style.AppTheme_Black);
         }
