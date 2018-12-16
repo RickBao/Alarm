@@ -9,8 +9,8 @@ import android.support.annotation.MenuRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.widget.Toolbar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,9 +22,9 @@ import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-//    @Nullable
-//    @BindView(R.id.toolbar)
-//    Toolbar mToolbar;
+    @Nullable
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
 
     private Menu mMenu;
 
@@ -55,14 +55,14 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         setVolumeControlStream(AudioManager.STREAM_ALARM);
         ButterKnife.bind(this);
-//        if (mToolbar != null) {
-//            setSupportActionBar(mToolbar);
-//            ActionBar ab = getSupportActionBar();
-//            if (ab != null) {
-//                ab.setDisplayHomeAsUpEnabled(isDisplayHomeUpEnabled());
-//                ab.setDisplayShowTitleEnabled(isDisplayShowTitleEnabled());
-//            }
-//        }
+        if (mToolbar != null) {
+            setSupportActionBar(mToolbar);
+            ActionBar ab = getSupportActionBar();
+            if (ab != null) {
+                ab.setDisplayHomeAsUpEnabled(isDisplayHomeUpEnabled());
+                ab.setDisplayShowTitleEnabled(isDisplayShowTitleEnabled());
+            }
+        }
     }
 
     @Override
